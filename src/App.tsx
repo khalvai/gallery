@@ -1,33 +1,16 @@
-import "./App.css";
+import { Routes, Route } from "react-router"
+import Home from "./pages/Home.tsx"
+import Art from "./pages/Art.tsx"
 
-function Image({
-  address,
-  height,
-  width,
-}: {
-  address: string;
-  height: string;
-  width: string;
-}) {
-  return (
-    <div className="image-container">
-      <img
-        src={address}
-        alt="Placeholder"
-        style={{ height, width, borderRadius: "10px" }}
-      />
-    </div>
-  );
-}
+import "./App.css"
+
 function App() {
   return (
-    <>
-      <div className="flex gap-2 justify-center mt-2 h-screen">
-        <Image address="/night.jpeg" height="600px" width="400px" />
-        <Image address="/couple.jpeg" height="600px" width="300px" />
-      </div>
-    </>
-  );
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/arts/:name" element={<Art />} />
+    </Routes>
+  )
 }
 
-export default App;
+export default App
