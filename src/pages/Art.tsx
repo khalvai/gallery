@@ -39,7 +39,9 @@ export default function Art() {
     <main className="min-h-screen bg-black text-white flex flex-col items-center px-4 py-8">
       <div className="w-full max-w-md lg:max-w-lg flex flex-col gap-6">
         <header className="text-center">
-          <h1 className="text-2xl sm:text-4xl font-semibold">{art.name}</h1>
+          <h1 className="font-serif text-2xl sm:text-4xl font-semibold">
+            {art.name}
+          </h1>
           <p className="mt-2 text-neutral-400">{art.description}</p>
         </header>
 

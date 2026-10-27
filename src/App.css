@@ -5,3 +5,6 @@ body {
   background-color: #242424;
   color: #f4f4f4;
 }
+@theme {
+  --font-serif: "Instrument Serif", serif;
+}
