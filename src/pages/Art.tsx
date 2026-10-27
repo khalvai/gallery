@@ -1,6 +1,5 @@
 import { useParams } from "react-router"
 import { artworks } from "../data"
-import Image from "../components/Image"
 
 type SoundCloudPlayerProps = {
   trackUrl: string
