@@ -1,5 +1,5 @@
 {
-  "name": "gallery",
+  "name": "Gallery",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,11 +7,14 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "react": "19.3.1",
-    "react-dom": "19.3.1"
+    "react-dom": "19.3.1",
+    "react-router": "8.5.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "4.3.3",
@@ -20,6 +23,7 @@
     "@types/react-dom": "19.3.0",
     "@vitejs/plugin-react": "6.1.2",
     "oxlint": "1.88.0",
+    "prettier": "3.9.10",
     "tailwindcss": "4.3.3",
     "typescript": "6.0.3",
     "vite": "8.3.4"
