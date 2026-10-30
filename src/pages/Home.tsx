@@ -12,7 +12,7 @@ export default function HomePage() {
             to={`/arts/${a.name}`}
             className="block overflow-hidden rounded-lg"
           >
-            <Image address={a.imageUrl} />
+            <Image address={a.imageUrl} name={a.name} songUrl={a.songUrl} />
           </Link>
         ))}
       </div>

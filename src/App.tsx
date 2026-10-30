@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router"
 import Home from "./pages/Home.tsx"
 import Art from "./pages/Art.tsx"
 import Footer from "./components/Footer.tsx"
-
+import { Form } from "./ts.tsx"
 import "./App.css"
 
 function App() {
@@ -14,6 +14,8 @@ function App() {
           <Route path="/arts/:name" element={<Art />} />
         </Routes>
       </main>
+
+      <Form />
       <Footer />
     </div>
   )
