@@ -20,7 +20,7 @@ export default function Image({
   }
 
   return (
-    <div className="group relative overflow-hidden rounded-lg font-serif">
+    <div className="group relative aspect-[3/3] w-full overflow-hidden rounded-lg font-serif">
       <img
         src={address}
         alt={alt}

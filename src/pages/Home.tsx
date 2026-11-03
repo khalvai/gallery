@@ -10,7 +10,7 @@ export default function HomePage() {
           <Link
             key={a.name}
             to={`/arts/${a.name}`}
-            className="block overflow-hidden rounded-lg"
+            className="group relative block overflow-hidden rounded-lg bg-neutral-900"
           >
             <Image address={a.imageUrl} name={a.name} songUrl={a.songUrl} />
           </Link>
