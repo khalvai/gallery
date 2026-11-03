@@ -27,9 +27,9 @@ export function SoundCloudPlayer({
   )
 }
 export default function Art() {
-  const { name } = useParams<{ name: string }>()
+  const { slag } = useParams<{ slag: string }>()
 
-  const art = artworks.find((a) => a.name === name)
+  const art = artworks.find((a) => a.slag === slag)
 
   if (!art) {
     return <div>Artwork not found</div>
@@ -40,14 +40,17 @@ export default function Art() {
       <div className="w-full max-w-md lg:max-w-lg flex flex-col gap-6">
         <header className="text-center">
           <h1 className="font-serif text-2xl sm:text-4xl font-semibold">
-            {art.name}
+            {art.title || art.slag}
           </h1>
           <p className="mt-2 text-neutral-400">{art.description}</p>
+          <p className="mt-1 text-neutral-500">
+            {art.artist} {art.year && `(${art.year})`}
+          </p>
         </header>
 
         <img
           src={art.imageUrl}
-          alt={art.name}
+          alt={art.title || art.slag}
           className="mx-auto w-auto max-w-full max-h-[70vh] h-auto rounded-lg"
         />
         {art.songUrl && <SoundCloudPlayer trackUrl={art.songUrl} />}

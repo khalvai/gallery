@@ -3,20 +3,22 @@ import { useNavigate } from "react-router"
 type Props = {
   address: string
   alt?: string
-  name?: string
+  slag?: string
+  title?: string
   songUrl?: string
 }
 
 export default function Image({
   address,
   alt = "",
-  name = "Untitled",
+  slag = "Untitled",
+  title,
   songUrl,
 }: Props) {
   const navigate = useNavigate()
   const handleListen = (e: React.MouseEvent) => {
     e.stopPropagation() // Prevents triggering parent click events
-    navigate(`/art/${name}`)
+    navigate(`/art/${slag}`)
   }
 
   return (
@@ -30,7 +32,7 @@ export default function Image({
 
       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-between items-start p-4 pointer-events-none group-hover:pointer-events-auto ">
         <span className="text-white font-medium text-2xl drop-shadow">
-          {name}
+          {title || slag}
         </span>
 
         {songUrl && (
