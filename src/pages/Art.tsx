@@ -88,6 +88,34 @@ export default function Art() {
           {art.description && (
             <p className="mt-2 text-neutral-400">{art.description}</p>
           )}
+
+          {/* Render bilingual lyrics/lines if present */}
+          {art.lyrics && art.lyrics.length > 0 && (
+            <div className="mt-4 flex flex-col gap-3 text-center">
+              {art.lyrics.map((line, idx) => (
+                <div key={idx} className="flex flex-col gap-1">
+                  {line.fa && (
+                    <p
+                      dir="rtl"
+                      lang="fa"
+                      className="text-neutral-300 font-sans text-base leading-relaxed"
+                    >
+                      «{line.fa}»
+                    </p>
+                  )}
+                  {line.en && (
+                    <p
+                      dir="ltr"
+                      lang="en"
+                      className="text-neutral-200 font-serif text-base sm:text-lg tracking-wide mt-0.5"
+                    >
+                      "{line.en}"
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
           <p className="mt-1 text-neutral-500">
             {art.artist} {art.year && `(${art.year})`}
           </p>

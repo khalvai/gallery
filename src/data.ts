@@ -7,6 +7,7 @@ export interface Art {
   imageUrl: string
   songUrl?: string
   instagramUrl?: string
+  lyrics?: { fa: string; en: string }[]
 }
 export const artworks: Art[] = [
   {
@@ -46,11 +47,24 @@ export const artworks: Art[] = [
   {
     title: "Janan",
     slag: "janan",
-    artist: "Featured in video by @poyanjafarii",
-    year: "	2026",
     description: "",
+    artist: "",
+    year: "",
+    lyrics: [
+      {
+        fa: "این چشم‌ها جادوییه، این عشق دیوانه‌واره",
+        en: "These eyes are magical, this love is wild.",
+      },
+      {
+        fa: "جانان، جانان",
+        en: "Sweetheart, sweetheart...",
+      },
+      {
+        fa: "جانان که تو این دنیا باشه این دنیا خیلی قشنگه",
+        en: "Sweetheart, if you are in this world, this world is so beautiful.",
+      },
+    ],
     imageUrl: "/janan.webp",
-    instagramUrl:
-      "https://www.instagram.com/reel/DfeWP4MoiYa/?utm_source=ig_web_copy_link&cplk=NTc4MTIwNjQ2YQ",
+    instagramUrl: "https://www.instagram.com/reel/DfeWP4MoiYa/",
   },
 ]
