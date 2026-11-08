@@ -6,6 +6,7 @@ export interface Art {
   description: string
   imageUrl: string
   songUrl?: string
+  instagramUrl?: string
 }
 export const artworks: Art[] = [
   {
@@ -41,5 +42,15 @@ export const artworks: Art[] = [
     year: "	1812",
     description: "",
     imageUrl: "/the-elegant-reader.jpeg",
+  },
+  {
+    title: "Janan",
+    slag: "janan",
+    artist: "Featured in video by @poyanjafarii",
+    year: "	2026",
+    description: "",
+    imageUrl: "/janan.webp",
+    instagramUrl:
+      "https://www.instagram.com/reel/DfeWP4MoiYa/?utm_source=ig_web_copy_link&cplk=NTc4MTIwNjQ2YQ",
   },
 ]

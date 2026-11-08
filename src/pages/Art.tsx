@@ -1,5 +1,6 @@
 import { useParams } from "react-router"
 import { artworks } from "../data"
+import { useEffect } from "react"
 
 type SoundCloudPlayerProps = {
   trackUrl: string
@@ -26,15 +27,57 @@ export function SoundCloudPlayer({
     </div>
   )
 }
+
+interface InstagramEmbedProps {
+  postUrl: string
+}
+
+export const InstagramEmbed: React.FC<InstagramEmbedProps> = ({ postUrl }) => {
+  useEffect(() => {
+    if (!document.getElementById("instagram-embed-script")) {
+      const script = document.createElement("script")
+      script.id = "instagram-embed-script"
+      script.src = "https://www.instagram.com/embed.js"
+      script.async = true
+      document.body.appendChild(script)
+    } else if ((window as any).instgrm) {
+      ;(window as any).instgrm.Embeds.process()
+    }
+  }, [postUrl])
+
+  const cleanUrl = postUrl.split("?")[0].replace(/\/$/, "")
+
+  return (
+    <div className="w-full flex justify-center">
+      <blockquote
+        className="instagram-media w-full rounded-lg border border-neutral-800 bg-neutral-900 shadow-sm"
+        data-instgrm-permalink={`${cleanUrl}/`}
+        data-instgrm-version="14"
+        style={{ width: "100%", minWidth: "326px" }}
+      >
+        <div className="p-4 flex items-center justify-center min-h-[350px]">
+          <span className="text-sm text-neutral-500 animate-pulse">
+            Loading Instagram media...
+          </span>
+        </div>
+      </blockquote>
+    </div>
+  )
+}
 export default function Art() {
   const { slag } = useParams<{ slag: string }>()
 
   const art = artworks.find((a) => a.slag === slag)
 
   if (!art) {
-    return <div>Artwork not found</div>
+    return (
+      <div className="min-h-screen bg-black text-white p-8">
+        Artwork not found
+      </div>
+    )
   }
 
+  console.log("art", art)
   return (
     <main className="min-h-screen bg-black text-white flex flex-col items-center px-4 py-8">
       <div className="w-full max-w-md lg:max-w-lg flex flex-col gap-6">
@@ -42,17 +85,24 @@ export default function Art() {
           <h1 className="font-serif text-2xl sm:text-4xl font-semibold">
             {art.title || art.slag}
           </h1>
-          <p className="mt-2 text-neutral-400">{art.description}</p>
+          {art.description && (
+            <p className="mt-2 text-neutral-400">{art.description}</p>
+          )}
           <p className="mt-1 text-neutral-500">
             {art.artist} {art.year && `(${art.year})`}
           </p>
         </header>
 
-        <img
-          src={art.imageUrl}
-          alt={art.title || art.slag}
-          className="mx-auto w-auto max-w-full max-h-[70vh] h-auto rounded-lg"
-        />
+        {art.instagramUrl ? (
+          <InstagramEmbed postUrl={art.instagramUrl} />
+        ) : (
+          <img
+            src={art.imageUrl}
+            alt={art.title || art.slag}
+            className="mx-auto w-auto max-w-full max-h-[70vh] h-auto rounded-lg object-contain"
+          />
+        )}
+
         {art.songUrl && <SoundCloudPlayer trackUrl={art.songUrl} />}
       </div>
     </main>

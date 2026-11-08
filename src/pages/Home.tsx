@@ -12,12 +12,7 @@ export default function HomePage() {
             to={`/arts/${a.slag}`}
             className="group relative block overflow-hidden rounded-lg bg-neutral-900"
           >
-            <Image
-              address={a.imageUrl}
-              title={a.title}
-              slag={a.slag}
-              songUrl={a.songUrl}
-            />
+            <Image art={a} />
           </Link>
         ))}
       </div>
