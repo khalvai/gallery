@@ -9,7 +9,7 @@ export default function HomePage() {
         {artworks.map((a) => (
           <Link
             key={a.slag}
-            to={`/arts/${a.slag}`}
+            to={`/art/${a.slag}`}
             className="group relative block overflow-hidden rounded-lg bg-neutral-900"
           >
             <Image art={a} />

@@ -10,7 +10,7 @@ function App() {
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/arts/:slag" element={<Art />} />
+          <Route path="/art/:slag" element={<Art />} />
         </Routes>
       </main>
 
