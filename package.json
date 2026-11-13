@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && tsx scripts/generate-art-pages.ts",
     "lint": "oxlint",
     "preview": "vite preview",
     "format": "prettier --write .",
@@ -38,6 +38,7 @@
     "oxlint": "1.88.0",
     "prettier": "3.9.10",
     "tailwindcss": "4.3.3",
+    "tsx": "^4.23.15",
     "typescript": "6.0.3",
     "vite": "8.3.4"
   }
