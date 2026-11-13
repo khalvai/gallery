@@ -3,6 +3,7 @@ import Home from "./pages/Home.tsx"
 import Art from "./pages/Art.tsx"
 import Footer from "./components/Footer.tsx"
 import "./App.css"
+import NotesSlider from "./pages/NoteSlider.tsx"
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/art/:slag" element={<Art />} />
+          <Route path="/notes" element={<Home />} />
+
+          <Route path="/notes/:title" element={<NotesSlider />} />
         </Routes>
       </main>
 

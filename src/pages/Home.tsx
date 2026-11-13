@@ -1,6 +1,7 @@
 import Image from "../components/Image.tsx"
 import { Link } from "react-router"
-import { artworks } from "../data.ts"
+import { artworks, notes } from "../data.ts"
+import NotesTile from "../components/NoteTile.tsx"
 
 export default function HomePage() {
   return (
@@ -13,6 +14,15 @@ export default function HomePage() {
             className="group relative block overflow-hidden rounded-lg bg-neutral-900"
           >
             <Image art={a} />
+          </Link>
+        ))}
+        {notes.map((note) => (
+          <Link
+            key={note.title}
+            to={`/notes/${note.title}`}
+            className="group relative block overflow-hidden rounded-lg bg-neutral-900"
+          >
+            <NotesTile note={note} />
           </Link>
         ))}
       </div>

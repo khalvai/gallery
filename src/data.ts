@@ -10,6 +10,21 @@ export interface Art {
   instagramUrl?: string
   lyrics?: { fa: string; en: string }[]
 }
+
+export interface Note {
+  title: string
+  slag: string
+  content: string[]
+  date?: string
+}
+
+export const notes: Note[] = [
+  {
+    title: "What Happened ?",
+    slag: "what-happened",
+    content: ["They came.", "Suffered.", "Disappeared."],
+  },
+]
 export const artworks: Art[] = [
   {
     slag: "in-silence",
