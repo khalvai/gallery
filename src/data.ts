@@ -16,7 +16,7 @@ export const artworks: Art[] = [
     title: "In silence",
     artist: "Mohammad Reza Lotfi",
     year: "2010-2013",
-    description: "deep emotions through melodies and soulful sounds. ",
+    description: "Emotions through melodies and soulful sounds. ",
     imageUrl: "/Lotfi.jpg",
     songUrl:
       "https://soundcloud.com/banafsheh-nemati/unknown-artist-unknown-album-1",
