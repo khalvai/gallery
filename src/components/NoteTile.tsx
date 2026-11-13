@@ -1,6 +1,4 @@
-import { useState } from "react"
 import { useNavigate } from "react-router"
-import { ArrowLeft } from "lucide-react"
 import type { Note } from "../data"
 
 export default function NotesTile({
