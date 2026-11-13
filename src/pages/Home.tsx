@@ -19,7 +19,7 @@ export default function HomePage() {
         {notes.map((note) => (
           <Link
             key={note.title}
-            to={`/notes/${note.title}`}
+            to={`/notes/${note.slag}`}
             className="group relative block overflow-hidden rounded-lg bg-neutral-900"
           >
             <NotesTile note={note} />

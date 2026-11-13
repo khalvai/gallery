@@ -6,14 +6,14 @@ import { notes } from "../data"
 export default function NotesSlider() {
   const [index, setIndex] = useState(0)
 
-  const { title } = useParams<{ title: string }>()
+  const { slag } = useParams<{ slag: string }>()
 
   useEffect(() => {
-    if (title) {
-      const foundIndex = notes.findIndex((note) => note.title === title)
+    if (slag) {
+      const foundIndex = notes.findIndex((note) => note.slag === slag)
       if (foundIndex !== -1) setIndex(foundIndex)
     }
-  }, [title])
+  }, [slag])
 
   const prev = () => setIndex((i) => Math.max(0, i - 1))
   const next = () => setIndex((i) => Math.min(notes.length - 1, i + 1))

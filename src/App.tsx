@@ -14,7 +14,7 @@ function App() {
           <Route path="/art/:slag" element={<Art />} />
           <Route path="/notes" element={<Home />} />
 
-          <Route path="/notes/:title" element={<NotesSlider />} />
+          <Route path="/notes/:slag" element={<NotesSlider />} />
         </Routes>
       </main>
 
