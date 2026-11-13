@@ -2,30 +2,53 @@ import { useParams } from "react-router"
 import { artworks } from "../data"
 import { useEffect } from "react"
 
-type SoundCloudPlayerProps = {
-  trackUrl: string
+type MediaPlayerProps = {
+  soundCloudUrl?: string
+  videoUrl?: string
   height?: number
 }
 
-export function SoundCloudPlayer({
-  trackUrl,
+export function MediaPlayer({
+  soundCloudUrl,
+  videoUrl,
   height = 166,
-}: SoundCloudPlayerProps) {
-  const src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(trackUrl)}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&visual=true`
+}: MediaPlayerProps) {
+  // R2 video takes priority
+  if (videoUrl) {
+    return (
+      <div className="w-full overflow-hidden rounded-xl  bg-black shadow-sm">
+        <video
+          src={videoUrl}
+          controls
+          playsInline
+          preload="metadata"
+          className="block w-full h-auto max-h-[70vh]"
+        >
+          Your browser does not support video playback.
+        </video>
+      </div>
+    )
+  }
 
-  return (
-    <div className="w-full overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
-      <iframe
-        title="SoundCloud music player"
-        src={src}
-        width="100%"
-        height={height}
-        allow="autoplay"
-        loading="lazy"
-        className="block w-full border-0 invert hue-rotate-180"
-      />
-    </div>
-  )
+  if (soundCloudUrl) {
+    const src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(soundCloudUrl)}&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&visual=true`
+
+    return (
+      <div className="w-full overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+        <iframe
+          title="SoundCloud music player"
+          src={src}
+          width="100%"
+          height={height}
+          allow="autoplay"
+          loading="lazy"
+          className="block w-full border-0 invert hue-rotate-180"
+        />
+      </div>
+    )
+  }
+
+  return null
 }
 
 interface InstagramEmbedProps {
@@ -77,7 +100,6 @@ export default function Art() {
     )
   }
 
-  console.log("art", art)
   return (
     <main className="min-h-screen bg-black text-white flex flex-col items-center px-4 py-8">
       <div className="w-full max-w-md lg:max-w-lg flex flex-col gap-6">
@@ -123,6 +145,10 @@ export default function Art() {
 
         {art.instagramUrl ? (
           <InstagramEmbed postUrl={art.instagramUrl} />
+        ) : art.videoUrl ? (
+          <MediaPlayer videoUrl={art.videoUrl} />
+        ) : art.songUrl ? (
+          <MediaPlayer soundCloudUrl={art.songUrl} />
         ) : (
           <img
             src={art.imageUrl}
@@ -130,8 +156,6 @@ export default function Art() {
             className="mx-auto w-auto max-w-full max-h-[70vh] h-auto rounded-lg object-contain"
           />
         )}
-
-        {art.songUrl && <SoundCloudPlayer trackUrl={art.songUrl} />}
       </div>
     </main>
   )

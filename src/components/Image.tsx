@@ -14,7 +14,7 @@ export default function Image({ art }: { art: Art }) {
         src={art.imageUrl}
         alt={art.title || art.slag}
         loading="lazy"
-        className="w-full  object-cover transition-transform duration-300 group-hover:scale-105"
+        className="w-full  h-full object-cover transition-transform duration-300 group-hover:scale-105"
       />
 
       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-between items-start p-4 pointer-events-none group-hover:pointer-events-auto ">
@@ -22,7 +22,7 @@ export default function Image({ art }: { art: Art }) {
           {art.title || art.slag}
         </span>
 
-        {(art.songUrl || art.instagramUrl) && (
+        {(art.songUrl || art.instagramUrl || art.videoUrl) && (
           <button
             onClick={handleListen}
             className="bg-white/90 hover:bg-white text-gray-900 font-semibold text-xl px-3 py-2 rounded-full shadow-md transition-colors flex items-center gap-1.5 cursor-pointer"

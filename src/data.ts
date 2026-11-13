@@ -5,6 +5,7 @@ export interface Art {
   year: string
   description: string
   imageUrl: string
+  videoUrl?: string
   songUrl?: string
   instagramUrl?: string
   lyrics?: { fa: string; en: string }[]
@@ -66,5 +67,37 @@ export const artworks: Art[] = [
     ],
     imageUrl: "/janan.webp",
     instagramUrl: "https://www.instagram.com/reel/DfeWP4MoiYa/",
+  },
+
+  {
+    title: "I Am the Land",
+    slag: "i-am-the-land",
+    description: "",
+    artist: "Mahmoud Darvish",
+    year: "",
+    lyrics: [
+      {
+        fa: "سینه‌اش را تفتیش کردند و جز قلبش چیزی نیافتند.",
+        en: "They searched his chest, and found nothing but his heart.",
+      },
+      {
+        fa: "قلبش را تفتیش کردند و جز ملتش چیزی نیافتند.",
+        en: "They searched his heart, and found nothing but his people.",
+      },
+      {
+        fa: "صدایش را تفتیش کردند و جز اندوهش چیزی نیافتند.",
+        en: "They searched his voice, and found nothing but his grief.",
+      },
+      {
+        fa: "اندوهش را تفتیش کردند و جز زندانش چیزی نیافتند.",
+        en: "They searched his grief, and found nothing but his prison.",
+      },
+      {
+        fa: "زندانش را تفتیش کردند و جز خودشان را در زنجیر نیافتند.",
+        en: "They searched his prison, and found nothing but themselves in chains.",
+      },
+    ],
+    imageUrl: "/mahmoud-darwish.webp",
+    videoUrl: "https://media.khalvai.com/videos/Mahmoud-Darwish.mp4",
   },
 ]
