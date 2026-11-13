@@ -31,7 +31,7 @@ function generateMetadata(html: string, art: (typeof artworks)[number]) {
     <meta name="description" content="${escapeHtml(description)}" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Khalvai Gallery" />
+
     <meta property="og:title" content="${escapeHtml(title)}" />
     <meta property="og:description" content="${escapeHtml(description)}" />
     <meta property="og:image" content="${escapeHtml(image)}" />
