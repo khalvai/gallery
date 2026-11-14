@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { ArrowLeft, ArrowRight, Languages } from "lucide-react"
+import { ArrowLeft, ArrowRight } from "lucide-react"
 import { useParams } from "react-router"
 import { notes } from "../data"
 
