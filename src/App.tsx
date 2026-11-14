@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router"
 import Home from "./pages/Home.tsx"
 import Art from "./pages/Art.tsx"
 import Footer from "./components/Footer.tsx"
+import "@fontsource-variable/vazirmatn"
 import "./App.css"
 import NotesSlider from "./pages/NoteSlider.tsx"
 

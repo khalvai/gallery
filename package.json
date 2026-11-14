@@ -20,6 +20,7 @@
     "*.{json,css,md,html}": "prettier --write"
   },
   "dependencies": {
+    "@fontsource-variable/vazirmatn": "^5.3.0",
     "@fontsource/instrument-serif": "5.3.0",
     "lucide-react": "^1.72.0",
     "react": "19.3.1",

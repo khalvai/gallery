@@ -14,15 +14,32 @@ export interface Art {
 export interface Note {
   title: string
   slag: string
+  lang: "fa" | "en"
   content: string[]
+  translation?: string[]
   date?: string
+  author?: string
 }
-
 export const notes: Note[] = [
   {
     title: "What Happened ?",
     slag: "what-happened",
     content: ["They came.", "Suffered.", "Disappeared."],
+    lang: "en",
+  },
+  {
+    title: "",
+    slag: "saz-mishavim",
+    lang: "fa",
+    content: [
+      "آن نَخلِ ناخَلَف که تَبَر شُد زِ ما نَبُود\n\nما را زَمانه گَر شِکَنَد ساز می‌شَویم",
+    ],
+    translation: [
+      "That unworthy palm that became an axe was never one of us;",
+      "Should time break us, we become a musical instrument.",
+    ],
+
+    author: "صائب تبریزی",
   },
 ]
 export const artworks: Art[] = [

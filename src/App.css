@@ -7,4 +7,6 @@ body {
 }
 @theme {
   --font-serif: "Instrument Serif", serif;
+  --font-persian:
+    "Instrument Serif", "Vazirmatn Variable", "Vazirmatn", sans-serif;
 }
