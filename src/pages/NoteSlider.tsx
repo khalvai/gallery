@@ -69,7 +69,7 @@ export default function NotesSlider() {
   }
 
   return (
-    <main className="flex flex-col items-center bg-black px-4 py-8 text-white">
+    <main className="flex flex-col justify-center items-center bg-black px-4 py-30 text-white">
       <div className="flex w-full max-w-md flex-col gap-6 lg:max-w-lg">
         <article
           lang={isShowingEnglish ? "en" : "fa"}
